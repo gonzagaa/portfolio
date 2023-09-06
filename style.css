@@ -215,25 +215,23 @@ section .presentation-module {
     font-weight: 700;
 }
 
-.button {
+  .button {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem 1.5rem;
     gap: 7rem;
     background: url(./assets/Background.jpg);
-    filter: brightness(1.5);
-    outline: .3rem var(--secondary-color) solid;
+    outline: 3px #181717 solid;
     outline-offset: -3px;
-    border-radius: 2rem;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     transition: 400ms;
-
     margin-left: -6rem;
     margin-top: 2rem;
   }
-  
+
   .button .text {
     color: var(--principal-color);
     font-weight: 700;
@@ -243,28 +241,29 @@ section .presentation-module {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
   }
+
+  .button:hover .text {
+    color: var(--secondary-color);
+    filter: brightness(.8);
+  }
   
   .button svg path {
     transition: 400ms;
+    fill: var(--principal-color);
+  }
+
+  .button:hover svg path {
+    fill: var(--secondary-color);
+    filter: brightness(.8);
   }
   
   .button:hover {
     background: transparent;
   }
   
-  .button:hover .text {
-    color: var(--secondary-color);
-    filter: brightness(.8);
-  }
-
-  .button svg path {
-    fill: var(--principal-color);
-  }
+ 
   
-  .button:hover svg path {
-    fill: var(--secondary-color);
-    filter: brightness(.8);
-  }
+
 
 /*skills=================================================*/
 
@@ -387,7 +386,7 @@ h3 {
 @media (max-width: 768px) {
 
     .presentation {
-        margin-top: -15rem;
+        margin-top: -10rem;
     }
 
     section.module.parallax p {
@@ -406,5 +405,13 @@ h3 {
 
     section.module.parallax ul {
         margin-left: -1rem;
+    }
+
+    .mockup img {
+        margin-bottom: -2rem;
+    }
+
+    .button {
+        margin-bottom: -5rem;
     }
 }
