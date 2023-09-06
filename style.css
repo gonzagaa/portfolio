@@ -125,8 +125,8 @@ section .presentation-module {
     padding-top: 3rem;
 }
 
-/*projects==============================================*/
-
+/*projects mockups==============================================*/
+ 
 
 #projects h2, .skills h2 {
     font-size: 9rem;
@@ -163,9 +163,14 @@ section .presentation-module {
 }
 
 .mockup img {
-    width: 100rem;
-
+    width: 90rem;
     filter: drop-shadow(5px 0px 5px #111);
+
+    transition: transform 500ms;
+}
+
+.mockup img:hover {
+    transform: translateY(-4rem) scale(1.1);
 }
 
 .mockup h3 {
@@ -191,6 +196,47 @@ section .presentation-module {
 
     font-weight: 700;
 }
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    gap: 7rem;
+    background-color: var(--secondary-color);
+    outline: .3rem #181717 solid;
+    outline-offset: -3px;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: 400ms;
+
+    margin-left: -6rem;
+    margin-top: 2rem;
+  }
+  
+  .button .text {
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    transition: 400ms;
+  }
+  
+  .button svg path {
+    transition: 400ms;
+  }
+  
+  .button:hover {
+    background-color: transparent;
+  }
+  
+  .button:hover .text {
+    color: #181717;
+  }
+  
+  .button:hover svg path {
+    fill: #181717;
+  }
 
 /*skills=================================================*/
 
