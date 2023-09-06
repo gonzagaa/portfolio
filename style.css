@@ -27,6 +27,8 @@ body {
 main {
     display: block;
     background-color: var(--principal-color);
+
+    max-width: 200rem;
 }
 
 .container {
@@ -74,7 +76,7 @@ section.module.parallax1 {
 
 section.module.parallax p {
     font-family: 'DM Sans', sans-serif;
-    font-size: 2rem;
+    font-size: min(2rem, 4vw);
 
     color: var(--principal-color);
 
@@ -82,7 +84,7 @@ section.module.parallax p {
 }
 
 section.module.parallax h1 {
-    font-size: 15rem;
+    font-size: min(15rem, 13vw);
     text-transform: uppercase;
     line-height: 0;
 
@@ -91,7 +93,7 @@ section.module.parallax h1 {
 }
 
 section.module.parallax h2 {
-    font-size: 9rem;
+    font-size: min(9rem, 10vw);
     text-transform: uppercase;
     margin-right: 2rem;
     line-height: 0;
@@ -108,7 +110,7 @@ section.module.parallax ul {
 }
 
 section.module.parallax ul li a img {
-    width: 5rem;
+    width: min(5rem, 7vw);;
 
     transition: transform 300ms;
 }
@@ -129,7 +131,7 @@ section .presentation-module {
  
 
 #projects h2, .skills h2 {
-    font-size: 9rem;
+    font-size: min(9rem, 10vw);
     color: var(--secondary-color);
     text-transform: uppercase;
     font-family: "Poppins", sans-serif;
@@ -156,6 +158,22 @@ section .presentation-module {
     row-gap: 18rem;
 }
 
+.A {
+    grid-area: "A";
+}
+
+.B {
+    grid-area: "B";
+}
+
+.C {
+    grid-area: "C";
+}
+
+.D {
+    grid-area: "D";
+}
+
 .mockup {
     display: flex;
     flex-direction: column;
@@ -163,14 +181,14 @@ section .presentation-module {
 }
 
 .mockup img {
-    width: 90rem;
+    width: min(90rem, 100vw);
     filter: drop-shadow(5px 0px 5px #111);
 
     transition: transform 500ms;
 }
 
 .mockup img:hover {
-    transform: translateY(-4rem) scale(1.1);
+    transform: translateY(-4rem) scale(1.05);
 }
 
 .mockup h3 {
@@ -178,7 +196,7 @@ section .presentation-module {
     margin-left: -6rem;
 
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: min(2rem, 3vw);
     background: url(./assets/Background.jpg);
     background-size: contain;
     -webkit-background-clip: text;
@@ -189,9 +207,9 @@ section .presentation-module {
 
 .mockup p {
     margin-left: -6rem;
+    font-size: min(2.5rem, 3vw);
 
     text-transform: uppercase;
-    font-size: 2.5rem;
     color: var(--secondary-color);
 
     font-weight: 700;
@@ -203,8 +221,9 @@ section .presentation-module {
     align-items: center;
     padding: 1rem 1.5rem;
     gap: 7rem;
-    background-color: var(--secondary-color);
-    outline: .3rem #181717 solid;
+    background: url(./assets/Background.jpg);
+    filter: brightness(1.5);
+    outline: .3rem var(--secondary-color) solid;
     outline-offset: -3px;
     border-radius: 2rem;
     border: none;
@@ -216,10 +235,13 @@ section .presentation-module {
   }
   
   .button .text {
-    color: white;
+    color: var(--principal-color);
     font-weight: 700;
     font-size: 1em;
     transition: 400ms;
+
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
   }
   
   .button svg path {
@@ -227,21 +249,27 @@ section .presentation-module {
   }
   
   .button:hover {
-    background-color: transparent;
+    background: transparent;
   }
   
   .button:hover .text {
-    color: #181717;
+    color: var(--secondary-color);
+    filter: brightness(.8);
+  }
+
+  .button svg path {
+    fill: var(--principal-color);
   }
   
   .button:hover svg path {
-    fill: #181717;
+    fill: var(--secondary-color);
+    filter: brightness(.8);
   }
 
 /*skills=================================================*/
 
 .cards {
-    display: flex;
+    display: none;
 
     gap: 6rem;
 }
@@ -287,7 +315,7 @@ section .presentation-module {
 
 .skills h4 {
     color: var(--secondary-color);
-    font-size: 1.8rem;
+    font-size: min(1.8rem, 4vw);
     font-weight: 400;
 
     margin-top: -2.2rem;
@@ -296,7 +324,87 @@ section .presentation-module {
 
 h3 {
     color: var(--secondary-color);
+    font-size: min(2.4rem, 3vw);
     font-size: 2.4rem;
     font-weight: 700;
 }
 
+/*RESPONSIVIDADE=================================================*/
+
+@media (max-width: 1200px) {
+    .mockups {
+        display: grid;
+    
+        grid-template-areas: 
+        "A"
+        "B"
+        "C"
+        "D";
+    
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        row-gap: 15rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    section.module.parallax p {
+        margin-bottom: -1rem;
+    }
+    
+    section.module.parallax h1 {
+        margin-top: -8rem;
+    }
+    
+    section.module.parallax h2 {
+        margin-top: -5rem;
+    }
+
+    .mockup h3 {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    
+    .description {
+        margin-right: -4rem;
+    }
+
+    .button {
+        margin-right: -5.5rem;
+    }
+
+    section.module.parallax ul {
+        gap: 1rem;
+        margin-bottom: 5rem;
+    }
+
+    section.module.parallax ul li a img {
+        
+    }
+}
+
+@media (max-width: 768px) {
+
+    .presentation {
+        margin-top: -15rem;
+    }
+
+    section.module.parallax p {
+        margin-bottom: -2rem;
+    }
+    
+    section.module.parallax h1 {
+        margin-top: -11rem;
+        margin-left: .7rem;
+    }
+    
+    section.module.parallax h2 {
+        margin-top: -5rem;
+        margin-left: .8rem;
+    }
+
+    section.module.parallax ul {
+        margin-left: -1rem;
+    }
+}
