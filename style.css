@@ -17,6 +17,18 @@ body {
     overflow-wrap: break-word;
 }
 
+/*scrollbar=================================================*/
+
+::-webkit-scrollbar {
+    width: 1rem;
+    background-color: var(--p-color);
+}
+
+::-webkit-scrollbar-thumb {
+    width: 1rem;
+    background-image: url(./assets/Background.jpg);
+}
+
 /*home=======================================*/
 
 .wrapper {
@@ -244,7 +256,7 @@ section .presentation-module {
     padding: 1rem 1.5rem;
     gap: 7rem;
     background-color: var(--secondary-color);
-    outline: 3px #474747 solid;
+    outline: 3px #121212 solid;
     outline-offset: -3px;
     border-radius: 1rem;
     border: none;
