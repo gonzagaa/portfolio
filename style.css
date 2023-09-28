@@ -40,24 +40,13 @@ main {
     display: block;
     
     
-    background: linear-gradient(45deg, #6e6e6e 0%, #373737 100%);
-    animation: gradient 5s ease infinite;
+    background: linear-gradient(45deg, #000000 0%, #acacac 100%);
+    animation: gradient 4s ease infinite;
     background-size: 200% 200%;
 
     max-width: 200rem;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 
 .container {
     width: 100%;
@@ -176,7 +165,6 @@ section .presentation-module {
 }
 
 
-
 /*projects mockups==============================================*/
 
 
@@ -234,7 +222,6 @@ section .presentation-module {
     width: min(90rem, 100vw);
     filter: drop-shadow(5px 0px 5px #111);
     filter: brightness(.9);
-    
 
     transition: transform 500ms;
 }
@@ -383,7 +370,7 @@ h3 {
     font-weight: 700;
 }
 
-/*RESPONSIVIDADE=================================================*/
+/*RESPONSIVE=================================================*/
 
 @media (max-width: 1200px) {
     .mockups {
@@ -469,4 +456,18 @@ h3 {
     .button {
         margin-bottom: -5rem;
     }
+}
+
+/*ANIMATIONS===========================*/
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
